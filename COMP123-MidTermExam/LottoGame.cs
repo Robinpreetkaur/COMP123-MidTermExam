@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,12 +20,54 @@ namespace COMP123_MidTermExam
     {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         
-        // CREATE private fields here --------------------------------------------
+        private List<int> m_elementList;
+        private int m_elementNumber;
+        private List<int> m_numberList;
+        private Random m_random;
+        private int m_setSize;
 
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        
-        // CREATE public properties here -----------------------------------------
+        public List<int> ElementList{
+         get
+            {
+                return m_elementList;
+            }
+         }
+        public int ElementNumber {
+            get
+            {
+                   return m_elementNumber;
+            } 
+            
+            set
+            {
+                m_elementNumber= value;
 
+            }
+        }
+        public List<int> NumberList {
+            get
+              {
+                return m_numberList;
+             }
+        }
+        public Random random{
+            get
+            {
+                return m_random;
+            }
+        }
+        public int SetSize {
+            get
+            {
+                return m_setSize;
+            }
+            set
+            {
+                m_setSize= value;
+            }
+        }
+       
         // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         /**
@@ -38,6 +81,10 @@ namespace COMP123_MidTermExam
          * @param {int} elementNumber
          * @param {int} setSize
          */
+       
+
+
+
         public LottoGame(int elementNumber = 6, int setSize = 49)
         {
             // assign elementNumber local variable to the ElementNumber property
@@ -47,17 +94,34 @@ namespace COMP123_MidTermExam
             this.SetSize = setSize;
 
             // call the _initialize method
-            this._initialize();
+            this.m_initialize();
 
             // call the _build method
-            this._build();
+            this.m_build();
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        // CREATE the private _initialize method here -----------------------------
+        // private _initialize method 
 
-        // CREATE the private _build method here -----------------------------------
+        private void m_initialize()
+        {
+           m_elementNumber= new ElementNumber();
+            m_random= new  random();
+           m_numberList= new NumberList();
+        }
+        
+
+        //  private _build method 
+        private void m_build()
+        {
+         for(int num=1; num < SetSize; num++) 
+            {
+                NumberList.Add(num);
+            }
+
+        
+        }
 
         // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
