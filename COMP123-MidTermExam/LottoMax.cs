@@ -25,7 +25,7 @@ namespace COMP123_MidTermExam
         public LottoMax()
             :base(7,49)
         {
-            
+             
         }
 
         // CREATE the public GenerateLottoNumbers method here ----------------

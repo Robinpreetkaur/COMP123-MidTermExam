@@ -86,6 +86,9 @@ namespace COMP123_MidTermExam
             return lottoNumberString;
         }
 
+         
+
+
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the public PickElements method here ----------------------------
