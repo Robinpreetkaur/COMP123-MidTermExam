@@ -1,8 +1,16 @@
-﻿using System;
+﻿////--------------------------------------
+//// Author's Name : Robinpreet kaur
+///  Author’s student number :301100296 
+///  Date last Modified : 17 July,2020 
+///  Program description : abstract class-- LottoGame , Interface---- IGenerateLottoNumber   subclasses--LottoMax , Lotto649
+/// -----------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace COMP123_MidTermExam
 {

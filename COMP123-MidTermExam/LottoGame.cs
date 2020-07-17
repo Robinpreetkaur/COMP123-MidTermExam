@@ -1,9 +1,18 @@
-﻿using System;
+﻿////--------------------------------------
+//// Author's Name : Robinpreet kaur
+///  Author’s student number :301100296 
+///  Date last Modified : 17 July,2020 
+///  Program description : abstract class-- LottoGame , Interface---- IGenerateLottoNumber   subclasses--LottoMax , Lotto649
+/// ------------------------------------------------------------
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Configuration;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace COMP123_MidTermExam
@@ -107,6 +116,7 @@ namespace COMP123_MidTermExam
 
         private void m_initialize()
         {
+            //instantiate new objects for private fields 
           List <int> m_elementNumber= new List<int>();
             m_random= new  Random();
           List <int> m_numberList= new List<int>();
@@ -116,12 +126,11 @@ namespace COMP123_MidTermExam
         //  private _build method 
         private void m_build()
         {
+            //for loop to add integers in NumberList  
          for(int num=1; num <= SetSize; num++) 
             {
                 NumberList.Add(num);
             }
-
-        
         }
 
         // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -153,26 +162,31 @@ namespace COMP123_MidTermExam
 
          
 
-
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        // CREATE the public PickElements method here ----------------------------
+        // public PickElements method ----------------------------
 
         public void PickElements()
         {
+            //checking if list is not empty 
           if (ElementList.Count>0 ) 
-             {
+             {    
+               //then clear method is called by both the lists
                  ElementList.Clear();
                  NumberList.Clear();
-            }
-        
+             }
+          //m_build is called to rebuilt the NumberList
             m_build();
 
           m_random rn = new Random();
-            for (int randomNumber = 1; randomNumber <= 6 ; randomNumber++)
+            //loop is created to generate random numbers 
+            for (int randomNumber = 1; randomNumber <= elementNumber ; randomNumber++)
             {
+                // it will select element from ElementList
              int  number = rn.Next (1, ElementList.Count);
+                //Remove the selected element from ElementList
                 ElementList.Remove(number);
+                //Add the element in NumberList
                 NumberList.Add(number); 
         
         }
