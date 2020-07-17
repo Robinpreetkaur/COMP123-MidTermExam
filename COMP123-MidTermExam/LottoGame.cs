@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace COMP123_MidTermExam
 
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public List<int> ElementList{
-         get
+           get
             {
                 return m_elementList;
             }
@@ -106,16 +107,16 @@ namespace COMP123_MidTermExam
 
         private void m_initialize()
         {
-           m_elementNumber= new ElementNumber();
-            m_random= new  random();
-           m_numberList= new NumberList();
+          List <int> m_elementNumber= new List<int>();
+            m_random= new  Random();
+          List <int> m_numberList= new List<int>();
         }
         
 
         //  private _build method 
         private void m_build()
         {
-         for(int num=1; num < SetSize; num++) 
+         for(int num=1; num <= SetSize; num++) 
             {
                 NumberList.Add(num);
             }
@@ -156,5 +157,25 @@ namespace COMP123_MidTermExam
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the public PickElements method here ----------------------------
+
+        public void PickElements()
+        {
+          if (ElementList.Count>0 ) 
+             {
+                 ElementList.Clear();
+                 NumberList.Clear();
+            }
+        
+            m_build();
+
+          m_random rn = new Random();
+            for (int randomNumber = 1; randomNumber <= 6 ; randomNumber++)
+            {
+             int  number = rn.Next (1, ElementList.Count);
+                ElementList.Remove(number);
+                NumberList.Add(number); 
+        
+        }
     }
+}
 }

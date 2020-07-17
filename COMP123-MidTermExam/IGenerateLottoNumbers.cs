@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 
 
-
 namespace COMP123_MidTermExam
 {
-    interface IGenerateLottoNumbers
+    public interface IGenerateLottoNumbers
     {
         void GenerateLottoNumbers();
     }
